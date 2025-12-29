@@ -64,7 +64,7 @@ unixcygpath = /$(subst :,,$(call unixpath,$1))
 ifeq ($(platform), unix)
    TARGET := $(TARGET_NAME)_libretro.so
    fpic := -fPIC
-   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,-no-undefined
+   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,-no-undefined -lc
    CFLAGS += -D_GNU_SOURCE=1
 else ifeq ($(platform), osx)
    TARGET := $(TARGET_NAME)_libretro.dylib
